@@ -9,7 +9,11 @@
 <body>
     <div class="grid-container">
     <header class="header">
+        
         <div class="brand">
+            <button onclick="openHamMenu()">
+                &#9776;
+            </button>
             <a href="index.html">amazona</a>
         </div>
         <div class="header-links">
@@ -17,14 +21,69 @@
             <a href="signin.html">SIGN IN</a>
         </div>
     </header>
-
+    <aside class="sidebar">
+        <h3>Shopping Categories</h3>
+        <button class="side-close-button" onclick="closeHamMenu()">X</button>
+        <ul>
+            <li><a href="index.html">Men</a></li>
+            <li><a href="index.html">Women</a></li>
+        </ul>
+    </aside>
     <main class="main">
         
             <div class="content">
                 <ul class="products">
                     <li>
                         <div class="product">
-                            <img class="product-img" src="images/borealis.jpeg">
+                            <img class="product-img" src="images/p1.jpg">
+                            <div class="product-brand">Chemistry</div>
+                            <div class="product-name">
+                                <a href="product.html">Sample dress</a>
+                            </div>
+                            
+                            <div class="product-price">$100</div>
+                            <div class="product-rating">4.5 stars (10 reviews)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-img" src="images/p1.jpg">
+                            <div class="product-brand">Chemistry</div>
+                            <div class="product-name">
+                                <a href="product.html">Sample dress</a>
+                            </div>
+                            
+                            <div class="product-price">$100</div>
+                            <div class="product-rating">4.5 stars (10 reviews)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-img" src="images/p1.jpg">
+                            <div class="product-brand">Chemistry</div>
+                            <div class="product-name">
+                                <a href="product.html">Sample dress</a>
+                            </div>
+                            
+                            <div class="product-price">$100</div>
+                            <div class="product-rating">4.5 stars (10 reviews)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-img" src="images/p1.jpg">
+                            <div class="product-brand">Chemistry</div>
+                            <div class="product-name">
+                                <a href="product.html">Sample dress</a>
+                            </div>
+                            
+                            <div class="product-price">$100</div>
+                            <div class="product-rating">4.5 stars (10 reviews)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-img" src="images/p1.jpg">
                             <div class="product-brand">Chemistry</div>
                             <div class="product-name">
                                 <a href="product.html">Sample dress</a>
@@ -43,5 +102,15 @@
         <p>All Rights Reserved.</p>
     </footer>
     </div>
+
+    <script>
+        function openHamMenu(){
+            document.querySelector('.sidebar').classList.add("open");
+        }
+
+        function closeHamMenu(){
+            document.querySelector('.sidebar').classList.remove("open");
+        }
+    </script>
 </body>
 </html>
