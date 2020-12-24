@@ -1,5 +1,6 @@
 export default{
     products: [{ 
+        id: '1',
         image: "/images/p1.jpg",       
         brand: "Chemistry",
         category: "dress",
@@ -9,6 +10,7 @@ export default{
         reviews: 10
     },
     {
+        id: '2',
         image: "/images/p1.jpg",       
         brand: "Nike",
         category: "shoes",
@@ -18,6 +20,7 @@ export default{
         reviews: 12
     },
     {
+        id: '3',
         image: "/images/p1.jpg",       
         brand: "Adidas",
         category: "shoes",
@@ -27,6 +30,7 @@ export default{
         reviews: 15 
     },
     {
+        id: '4',
         image: "/images/p1.jpg",       
         brand: "Louis Vuitton",
         category: "dress",
@@ -36,6 +40,7 @@ export default{
         reviews: 5 
     },
     {
+        id: '5',
         image: "/images/p1.jpg",       
         brand: "U.S.P.A",
         category: "dress",

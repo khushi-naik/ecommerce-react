@@ -1,7 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import data from '../data';
 
 function HomeScreen (prop) {
-    return <div>this is HomeScreen</div>
+    return <ul className="products">
+    {
+    data.products.map(product => 
+        <li>
+            <div className="product">
+                <Link to={'/products/' + product.id}>
+                <img className="product-img" src={product.image}/>
+                </Link>
+                <div className="product-brand">{product.brand}</div>
+                <div className="product-name">
+                    <Link to={'/products/' + product.id}>{product.name}</Link>
+                </div>
+                
+                <div className="product-price">${product.price}</div>
+                <div className="product-rating">{product.rating} stars ({product.reviews} reviews)</div>
+            </div>
+        </li>)
+    }
+    </ul>
 }
 
 export default HomeScreen;

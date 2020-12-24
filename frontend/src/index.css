@@ -19,6 +19,10 @@ body{
   font-size: 16px;
 }
 
+#root{
+  height: 100%;
+}
+
 .grid-container{
   display: grid;
   grid-template-areas: 
@@ -161,4 +165,43 @@ a:hover{
 }
 .sidebar li:hover{
   background-color: aquamarine;
+}
+
+/* product page styling */
+
+.details{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 15px;
+  padding: 1rem;
+}
+
+.details-image{
+
+  flex: 2 1 25rem;
+  
+}
+.details-image img{
+  max-width: 20rem;
+  width: 100%;
+}
+.details-info{
+  flex: 1 1 25rem;
+}
+.details-action{
+  flex: 1 1 25rem;
+  border: 2px solid gray;
+  padding: 1rem;
+}
+
+.details-info ul, .details-action ul{
+  list-style: none;
+  padding: 0;
+}
+
+.details-action ul li:last-child{
+  display: flex;
+  flex-direction: column;
 }
