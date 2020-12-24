@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import data from './data';
 import './App.css';
+import HomeScreen from './Screens/HomeScreen';
+import ProductScreen from './Screens/ProductScreen';
 
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
     document.querySelector('.sidebar').classList.remove("open");
   }
   return (
+    <BrowserRouter>
     <div className="grid-container">
     <header className="header">
         
@@ -38,6 +41,8 @@ function App() {
     <main className="main">
         
             <div className="content">
+                <Route path="/products/:id" component={ProductScreen} />
+                <Route path="/" component={HomeScreen} exact={true} />
                 <ul className="products">
                 {
                 data.products.map(product => 
@@ -63,6 +68,7 @@ function App() {
         <p>All Rights Reserved.</p>
     </footer>
     </div>
+    </BrowserRouter>
   );
 }
 
