@@ -7,7 +7,8 @@ export default{
         name: "A-Line Dress",
         price: 60,
         rating: 4.5,
-        reviews: 10
+        reviews: 10,
+        countInStock: 0,
     },
     {
         id: '2',
@@ -17,7 +18,8 @@ export default{
         name: "Runners",
         price: 50,
         rating: 4.3,
-        reviews: 12
+        reviews: 12,
+        countInStock: 5,
     },
     {
         id: '3',
@@ -27,7 +29,8 @@ export default{
         name: "Sports Shoes",
         price: 65,
         rating: 4.6,
-        reviews: 15 
+        reviews: 15,
+        countInStock: 8,
     },
     {
         id: '4',
@@ -37,7 +40,8 @@ export default{
         name: "Peplum Dress",
         price: 100,
         rating: 4.8,
-        reviews: 5 
+        reviews: 5,
+        countInStock: 4,
     },
     {
         id: '5',
@@ -47,7 +51,8 @@ export default{
         name: "Polo Shirt",
         price: 80,
         rating: 4.8,
-        reviews: 35
+        reviews: 35,
+        countInStock: 5,
     }
 
     ]
