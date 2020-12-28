@@ -2,7 +2,15 @@
 import express from 'express';
 const app = express();
 import data from './data';
+import config from './config';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 //const { data } = require('./data');
+
+dotenv.config();
+const mongodburl = config.MONGODB_URL;
+mongoose.connect(mongodburl,{ useNewUrlParser: true}).catch(error =>
+    console.log(error.reason));
 
 app.get('/api/products',function(req,res){
     console.log(data.products);
