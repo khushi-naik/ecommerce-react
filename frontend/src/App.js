@@ -3,6 +3,7 @@ import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
+import SigninScreen from './screens/SigninScreen';
 
 
 
@@ -29,7 +30,7 @@ function App() {
         </div>
         <div className="header-links">
             <a href="cart.html">CART</a>
-            <a href="signin.html">SIGN IN</a>
+            <Link to="/signin">SIGN IN</Link>
         </div>
     </header>
     <aside className="sidebar">
@@ -43,6 +44,7 @@ function App() {
     <main className="main">
         
             <div className="content">
+                <Route path="/signin" component={SigninScreen} />
                 <Route path="/products/:id" component={ProductScreen} />
                 <Route path="/cart/:id?" component={CartScreen} />
                 <Route path="/" component={HomeScreen} exact={true} />
