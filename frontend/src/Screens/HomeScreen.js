@@ -6,8 +6,8 @@ import { listProducts } from '../actions/productActions';
 
 function HomeScreen (prop) {
     //const [products, setProduct] = useState([]);
-    const productList = useSelector(state => state.productList);
-    const { loading, products, error } = productList;
+    const productList = useSelector((state) => state.productList);
+    const { products, loading, error } = productList;
     const dispatch = useDispatch()
 
     useEffect( () => {
@@ -26,14 +26,14 @@ function HomeScreen (prop) {
     <ul className="products">
     {
     products.map(product => 
-        <li key= { product.id }>
+        <li key= { product._id }>
             <div className="product">
-                <Link to={'/products/' + product.id}>
+                <Link to={'/product/' + product._id}>
                 <img className="product-img" src={product.image}/>
                 </Link>
                 <div className="product-brand">{product.brand}</div>
                 <div className="product-name">
-                    <Link to={'/products/' + product.id}>{product.name}</Link>
+                    <Link to={'/product/' + product._id}>{product.name}</Link>
                 </div>
                 
                 <div className="product-price">${product.price}</div>

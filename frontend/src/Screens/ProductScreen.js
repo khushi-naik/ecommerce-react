@@ -9,7 +9,7 @@ function ProductScreen (props) {
     //     return x.id === prop.match.params.id;
     // })
     const [qty, setQty] = useState(1);
-    const productDetails = useSelector(state => state.productDetails);
+    const productDetails = useSelector((state) => state.productDetails);
     const { product, loading, error } = productDetails;
     const dispatch = useDispatch();
 
@@ -26,7 +26,7 @@ function ProductScreen (props) {
     }
 
     return <div>
-    <div>
+    <div className="back-link">
     <Link to="/">Return to Previous Page</Link>
     </div>
 
@@ -40,17 +40,17 @@ function ProductScreen (props) {
         <div className="details-info">
             <ul>
                 <li>{ product.name }</li>
-                <li>{ product.brand }</li>
-                <li>{ product.price }</li>
+                <li className="detail-brand-label">{ product.brand }</li>
+                <li className="detail-grey-label">Price: <span className="detail-red-label">${ product.price }</span></li>
                 <li>{product.rating } Stars( { product.reviews } Reviews)</li>
             </ul>
         </div>
 
         <div className="details-action">
             <ul>
-                <li>Price: {product.price}</li>
-                <li>Status: {product.countInStock>0 ? "Product in Stock" : "Unavailable"}</li>
-                <li>Qty: <select value= { qty } onChange={ (e) => { setQty(e.target.value) }}>
+                <li><span className="detail-grey-label">Price:</span><span className="detail-red-label"> ${product.price}</span></li>
+                <li><span className="detail-grey-label">Status:</span> <span className="detail-green-label">{product.countInStock>0 ? "Product in Stock" : "Unavailable"}</span></li>
+                <li><span className="detail-grey-label">Quantity:</span> <select value= { qty } onChange={ (e) => { setQty(e.target.value) }}>
                     { [...Array(product.countInStock).keys()].map(x =>
                     <option key={ x+1 } value={ x+1 }>{ x+1 }</option>
                     )}

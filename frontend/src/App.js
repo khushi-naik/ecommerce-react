@@ -4,10 +4,18 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import { useSelector } from 'react-redux';
+import AddProductScreen from './screens/AddProductScreen';
+import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 
 
 
 function App() {
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
 
   const openHamMenu = () =>{
     document.querySelector('.sidebar').classList.add("open");
@@ -29,8 +37,16 @@ function App() {
             
         </div>
         <div className="header-links">
-            <a href="cart.html">CART</a>
-            <Link to="/signin">SIGN IN</Link>
+         
+            {
+              userInfo ? <Link to="/cart">CART</Link> :
+              <Link to="/">CART</Link>
+            }
+            {
+              userInfo ? <Link to="/profile">{userInfo.name}</Link> :
+              <Link to="/signin">SIGN IN</Link>
+            }
+            
         </div>
     </header>
     <aside className="sidebar">
@@ -44,8 +60,13 @@ function App() {
     <main className="main">
         
             <div className="content">
+                <Route path="/products" component={AddProductScreen} />
+                <Route path="/shipping" component={ShippingScreen} />
+                <Route path="/payment" component={PaymentScreen} />
+                <Route path="/placeorder" component={PlaceOrderScreen} />
                 <Route path="/signin" component={SigninScreen} />
-                <Route path="/products/:id" component={ProductScreen} />
+                <Route path="/register" component={RegisterScreen} />                
+                <Route path="/product/:id" component={ProductScreen} />
                 <Route path="/cart/:id?" component={CartScreen} />
                 <Route path="/" component={HomeScreen} exact={true} />
                 
