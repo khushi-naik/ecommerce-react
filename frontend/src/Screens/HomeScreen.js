@@ -4,14 +4,17 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 
+
 function HomeScreen (prop) {
     //const [products, setProduct] = useState([]);
+    const chosenCategory = prop.match.params.id ? prop.match.params.id : '';
+    console.log(chosenCategory);
     const productList = useSelector((state) => state.productList);
     const { products, loading, error } = productList;
     const dispatch = useDispatch()
 
     useEffect( () => {
-        dispatch(listProducts());
+        dispatch(listProducts(chosenCategory));
         // const fetchData = async () => {
         // const { data } = await axios.get("/api/products"); 
         // setProduct(data);
@@ -20,7 +23,9 @@ function HomeScreen (prop) {
       return() => {
           //cleanup
       }; 
-    }, []);
+    }, [chosenCategory]);
+
+
     return loading ? <div>loading...</div>:
     error ? <div>{ error }</div>:
     <ul className="products">

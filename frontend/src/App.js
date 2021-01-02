@@ -10,6 +10,7 @@ import AddProductScreen from './screens/AddProductScreen';
 import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 
 
@@ -53,13 +54,16 @@ function App() {
         <h3>Shopping Categories</h3>
         <button className="side-close-button" onClick={closeHamMenu}>X</button>
         <ul>
-            <li><a href="index.html">Men</a></li>
-            <li><a href="index.html">Women</a></li>
+            <h4>Categories</h4>
+            <li><Link to='/category/men'>Men</Link></li>
+            <li><Link to='/category/women'>Women</Link></li>
         </ul>
     </aside>
     <main className="main">
         
             <div className="content">
+                <Route path="/category/:id" component={HomeScreen} />
+                <Route path="/profile" component={ProfileScreen} />
                 <Route path="/products" component={AddProductScreen} />
                 <Route path="/shipping" component={ShippingScreen} />
                 <Route path="/payment" component={PaymentScreen} />

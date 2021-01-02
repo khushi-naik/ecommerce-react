@@ -5,7 +5,10 @@ import { getToken, isAdmin, isAuth } from '../util';
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-    const products = await Product.find({});
+    const category = req.query.category ? { category: req.query.category } : {};
+
+    const products = await Product.find({...category});
+    console.log(products);
     res.send(products);
 })
 

@@ -1,8 +1,31 @@
 import express from 'express';
 import User from '../models/user'
-import { getToken } from '../util';
+import { getToken, isAuth } from '../util';
 
 const router = express.Router();
+
+router.put("/:id", async (req, res) => {    
+    const userId =  req.params.id;
+    const user = await User.findById(userId);
+    if(user){
+        user.name = req.body.name;
+        user.email = req.body.email;
+     
+        const updatedProfile = await user.save();
+    if(updatedProfile){
+       return res.status(200).send({
+        _id: updatedProfile.id,
+        name: updatedProfile.name,
+        email: updatedProfile.email,
+        isAdmin: updatedProfile.isAdmin,
+        token: getToken(updatedProfile),
+        });
+    }
+    }
+    
+    
+   return res.status(500).send({ message: "Error occured during an attempt to update profile" })
+})
 
 router.post('/signin', async (req,res) => {
     const signinUser = await User.findOne({

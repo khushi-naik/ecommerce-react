@@ -85,7 +85,7 @@ body{
 .products li{
   flex: 0 1 22rem;
   height: 23rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(190, 189, 189);
   list-style: none;
   
   
@@ -148,8 +148,8 @@ a:hover{
   position: fixed;
   transition: all 0.5s;
   transform: translateX(-30rem);
-  width: 30rem;
-  background-color: azure;
+  width: 25rem;
+  background-color: white;
   height: 100%;
 }
 .sidebar.open{
@@ -160,17 +160,36 @@ a:hover{
   cursor: pointer;
   position: absolute;
   right: 0.5rem;
-  top: 1.5rem;
+  top: 0.30rem;
+}
+
+.sidebar ul{
+  padding-left: 0;
 }
 
 .sidebar li{
   list-style: none;
+  padding: 15px 20px;
+}
+
+.sidebar h4{
+  text-align: center;
+  font-weight: 600;
   
 }
 .sidebar li:hover{
-  background-color: aquamarine;
+  background-color: rgb(221, 218, 218);
+  
 }
 
+.sidebar h3{
+  background-color: #232f3e;
+  padding: 20px 0;
+  margin-top: auto;
+  color: aliceblue;
+  text-align: center;
+  font-weight: 800;
+}
 /* product page styling */
 .back-link{
   font-weight: 300;
